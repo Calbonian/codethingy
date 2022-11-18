@@ -4,7 +4,7 @@ while (True):
     print("Choose a program to run.")
     print("Choose either security system, promotional spammer, calculator, password encrypter, random word generator,")
     print("or language creator.")
-    Program = input()
+    Program = str(input())
     if Program == "security system" or Program == "Security system" or Program == "SECURITY SYSTEM" or Program == "Security System" or Program == "Security" or Program == "security" or Program == "SECURITY" or Program == "System" or Program == "system" or Program == "SYSTEM":
         A = 1
         B = 2
@@ -22,10 +22,10 @@ while (True):
         user = input("What is your name? ") 
         print(user)
         print("Hello," + user) 
-        if user == "Caleb":
+        if user == "Caleb" or user == "caleb" or user == "CALEB" or user == "C" or user == "c":
             print("Access granted")
             print(7-3+10-1+B-2+A-C+3+D-E+F+3+5+H)
-        elif user == "Joshua":
+        elif user == "Joshua" or user == "joshua" or user == "JOSHUA" or user == "J" or user == "j":
             print("Access granted")
             print(7-3+1-1+B-F-2+A-C+3+D-E+F+3+C+5+H)
         else:
@@ -103,24 +103,23 @@ while (True):
             Num2 = int(Num2)
             if Operation == "+":
                 Answer = Num1 + Num2
-                print(Answer)
             elif Operation == "-":
                 Answer = Num1 - Num2
-                print(Answer)
             elif Operation == "x" or Operation == "*":
                 Answer = Num1 * Num2
-                print(Answer)
-            elif Operation == "/":
+            elif Operation == "/" or Operation == "÷" or Operation == "—":
                 Answer = Num1 / Num2
-                print(Answer)
+            elif Operation == "%" or Operation == "% of":
+                Answer = Num1 * Num2 / 100
             else:
-                print("INVALID OPERATION!")
+                Answer = "INVALID OPERATION"
+            print(Answer)
             print("Do you want to calculate another problem? Answer Yes or No.")
             Continue = input()
             if Continue == 'Yes' or Continue == 'yes' or Continue == 'YES':
                 Function2()
             elif Continue == 'No' or Continue == 'no' or Continue == 'NO':
-                pass
+                Program = "None"
             else:
                 print("ERROR!")
         Function2()
@@ -146,7 +145,7 @@ while (True):
             if Reencrypt == "YES" or Reencrypt == "Yes" or Reencrypt == "yes":
                 Function3()
             elif Reencrypt == "NO" or Reencrypt == "No" or Reencrypt == "no":
-                pass
+                Program = "None"
             else:
                 print("ERROR!")
         Function3()
@@ -159,15 +158,15 @@ while (True):
             R3 = random.choice(C)
             R4 = random.choice(V)
             R5 = random.choice(C)
-            print(R1+R2+R3+R4+R5)
             print("Welcome to the random word generator.")
             print("This generator will generate a 5 letter word.")
             print("Do you want to generate a random word?")
             Generate = input()
             if Generate == "Yes" or Generate == "yes" or Generate == "YES" or Generate == "Y" or Generate == "y":
-                pass
+                print(R1+R2+R3+R4+R5)
             else:
-                quit()
+                Program = "None"
+        Function1()
     if Program == "Language Creator" or Program == "Language creator" or Program == "language creator" or Program == "LANGUAGE CREATOR" or Program == "Language" or Program == "language" or Program == "LANGUAGE" or Program == "creator" or Program == "Creator" or Program == "CREATOR":
         def L():
             print("Welcome to the new language creator")
@@ -224,12 +223,13 @@ while (True):
             print(N4+U+N5+N9+F+D+N8+N7)
             print("6.""8794ieksgdskz8")
             print(N8+N7+N9+N4+I+E+K+S+G+D+S+K+Z+N8)
+            
         print("Do you want to create a language?")
         ST=input()
         if ST == "Yes" or ST == "YES" or ST == "yes":
             pass
         elif ST == "No" or ST == "no" or ST == "NO":
-            quit()
+            Program = "None"
         else:
             print("ERROR!")
             print("Do you want to create another language?")
@@ -237,7 +237,7 @@ while (True):
             if ST == "Yes" or ST == "YES" or ST == "yes":
                 pass
             elif ST == "No" or ST == "no" or ST == "NO":
-                quit()
+                Program = "None"
             else:
                 print("ERROR!")
                 quit()
@@ -247,7 +247,7 @@ while (True):
         if CO == "Yes" or CO == "YES" or CO == "yes":
             pass
         elif CO == "No" or CO == "no" or CO == "NO":
-            quit()
+            Program = "None"
         else:
             print("ERROR!")
             print("Do you want to create another language?")
@@ -255,14 +255,21 @@ while (True):
             if CO == "Yes" or CO == "YES" or CO == "yes":
                 pass
             elif CO == "No" or CO == "no" or CO == "NO":
-                quit()
+                Program = "None"
             else:
                 print("ERROR!")
                 quit()
-
     else:
-        print("INVALID PROGRAM")
-        quit()
+        if Program == "None" or Program == True:
+            Program == True
+        else:
+            Program == False
+        if Program == False:
+            print("INVALID PROGRAM")
+            sys.exit()
+            quit()
+        else:
+            pass
     print("Do you want to use another program? Answer Yes or No.")
     Continue2 = input()
     if Continue2 == 'Yes' or Continue2 == 'yes' or Continue2 == 'YES':
